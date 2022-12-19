@@ -1,4 +1,5 @@
 const submitBtn = $(".submit-btn");
+console.log(submitBtn)
 const mainContainer = $("#right-container");
 const fiveDayForecastContainer = $(".fiveday-forecast-container");
 const searchInput = $(".search-bar");
@@ -6,7 +7,7 @@ const prevSearches = $(".buttons");
 const cityNameAndDate = $(".city-name-and-date");
 const todayEmoji = $(".today-emoji");
 const todayTemp = $(".today-temp");
-const todayWind = $(".today-wind");
+const todayWind = $(".today-wind"); 
 const todayHumid = $(".today-humid");
 const todayUVIndex = $(".UVIndex-number");
 
@@ -107,7 +108,8 @@ function latLongCall(param) {
     });
 }
 
-submitBtn.on("click", function () {
+submitBtn.on("click", function (event) {
+  event.preventDefault();
   var searchBar = searchInput.val();
   latLongCall(searchBar);
 
